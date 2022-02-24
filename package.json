@@ -1,0 +1,63 @@
+{
+  "name": "ky-ele-form",
+  "description": "基于 element-ui 的数据驱动表单组件",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build:entry": "node build/build-entry.js",
+    "serve": "npm run build:entry && vue-cli-service serve",
+    "build:lib": "npm run build:entry && vue-cli-service build --target lib --name vue-ele-form --dest ./dist/ ./lib/index.js",
+    "build:docs": "vue-cli-service build",
+    "build": "npm run lint && npm run build:entry & npm run build:lib && npm run build:docs",
+    "lint": "vue-cli-service --mode production lint lib/*",
+    "release": "standard-version",
+    "pub": "npm run build:lib && npm run release &&  npm publish --registry https://registry.npmjs.org && git push --follow-tags origin master && git push  --follow-tags gitee master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dream2023/vue-ele-form"
+  },
+  "main": "dist/vue-ele-form.umd.min.js",
+  "homepage": "https://dream2023.github.io/vue-ele-form/",
+  "keywords": ["ky-ele-form"],
+  "types": "./types/index.d.ts",
+  "dependencies": {
+    "clone": "^2.1.2",
+    "dayjs": "^1.8.31",
+    "is-number": "^7.0.0",
+    "throttle-debounce": "^2.2.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "axios": "^0.20.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
+    "commitizen": "^4.1.2",
+    "core-js": "^3.6.5",
+    "cz-conventional-changelog": "^3.2.0",
+    "element-ui": "^2.13.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^3.1.0",
+    "json-templater": "^1.2.0",
+    "lint-staged": "^9.5.0",
+    "standard-version": "^7.0.0",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
