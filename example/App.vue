@@ -27,7 +27,10 @@ export default {
       formDesc: {
         title: {
           type: 'input',
-          label: '标题'
+          label: '标题',
+          attrs: {
+
+          }
         },
         content: {
           type: 'textarea',
